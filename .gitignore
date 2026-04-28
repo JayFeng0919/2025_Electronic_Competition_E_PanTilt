@@ -1,0 +1,35 @@
+# Keil 工程过滤规则
+*.uvguix.*
+*.uvoptx
+*.uvprojx.bak
+*.lst
+*.obj
+*.o
+*.axf
+*.bin
+*.hex
+*.map
+*.dep
+*.crf
+*.d
+*.lnp
+*.scvd
+*.sct
+*.iex
+*.i
+*.pbi
+*.plg
+*.rra
+*.tmp
+*.txt
+*.tra
+*.s
+
+# Keil 生成的文件夹
+Objects/
+Listings/
+DebugConfig/
+
+# 系统文件
+Thumbs.db
+.DS_Store
