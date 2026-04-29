@@ -3,12 +3,12 @@
 
 // 全局变量定义
 volatile uint8_t AIM_ENABLE = 0;
-volatile int16_t P_PAN = 60;
-volatile int16_t I_PAN = 0;
-volatile int16_t D_PAN = 0;
-volatile int16_t P_TILT = 0;
-volatile int16_t I_TILT = 0;
-volatile int16_t D_TILT = 0;
+volatile int16_t P_PAN = 110;
+volatile int16_t I_PAN = 5;
+volatile int16_t D_PAN = 600;
+volatile int16_t P_TILT = 100;
+volatile int16_t I_TILT = 3;
+volatile int16_t D_TILT = 400;
 
 // 按键中断初始化：PA0/PA1/PA2/PA3 上拉输入，下降沿中断
 void Button_Init(void)

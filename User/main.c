@@ -23,7 +23,7 @@ int main(void)
 			int32_t dx = Filter_Dx(Vision_dx);
 			int32_t dy = Filter_Dy(Vision_dy);
 
-			// 2. PD控制：无摆头、超顺滑追踪
+			// 2. PID控制：无摆头、超顺滑追踪
 			PID_PAN(dx);
 			PID_TILT(dy);
 			
