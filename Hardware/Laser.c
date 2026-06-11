@@ -1,5 +1,7 @@
 #include "Laser.h"
 
+volatile uint16_t ON_WIN_THRESHOLD = 400;
+
 void Laser_Init(void){
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 	

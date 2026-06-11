@@ -5,7 +5,7 @@
 
 #define Laser_Port   GPIOB
 #define Laser_Pin    GPIO_Pin_6
-#define ON_WIN_THRESHOLD       400
+extern volatile uint16_t ON_WIN_THRESHOLD;
 
 void Laser_Init(void);
 void Laser_On(void);

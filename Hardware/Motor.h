@@ -21,7 +21,7 @@
 
 //===================== 电机与控制参数 =====================
 #define PSC_VAL          71      // 固定预分频
-#define ARR_MIN          3999      // 最大速度(250Hz)
+#define ARR_MIN          1999      // 最大速度(250Hz)
 #define ARR_MAX          9999     // 最小速度(100Hz)
 #define DEAD_ZONE        4       // 死区（小于此值不动作，防微抖）
 

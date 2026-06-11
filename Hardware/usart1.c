@@ -1,10 +1,12 @@
 #include "usart1.h"
 #include "Motor.h"
 
+uint32_t exposure;
+
 int16_t Vision_dx = 0;
 int16_t Vision_dy = 0;
 
-static uint8_t buf[6];
+static uint8_t buf[8];
 static uint8_t index = 0;
 
 void USART1_Init(void)
@@ -53,14 +55,15 @@ void USART1_IRQHandler(void)
         uint8_t ch = USART_ReceiveData(USART1);
         buf[index++] = ch;
 
-        if(index == 6 && buf[0]==0xAA && buf[5]==0xDD)
+        if(index == 8 && buf[0]==0xAA && buf[7]==0xDD)
         {
             // 解析 dx dy
             Vision_dx = ((int16_t)buf[1]<<8) | buf[2];
             Vision_dy = ((int16_t)buf[3]<<8) | buf[4];
+			exposure = ((uint32_t)buf[5] << 8) | buf[6];
             index = 0;
         }
-        if(index >=6) index=0;
+        if(index >=8) index=0;
         USART_ClearITPendingBit(USART1, USART_IT_RXNE);
     }
 }

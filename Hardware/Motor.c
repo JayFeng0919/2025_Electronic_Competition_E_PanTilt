@@ -1,5 +1,6 @@
 #include "Motor.h"
 #include "Button.h"
+#include "OLED.h"
 
 // ÂË²¨»º´æ
 static int16_t dx_buf[3] = {0};
@@ -191,6 +192,7 @@ void PID_PAN(int32_t dx)
 	uint16_t temp = (uint16_t)(abs(output) * 10);
     if(temp > (ARR_MAX - ARR_MIN)) temp = ARR_MAX - ARR_MIN;
     uint16_t arr = ARR_MAX - temp;
+	OLED_ShowNum(4, 1, arr, 4);
     Motor_SetPWM(arr, current_arr_tilt);
 }
 
